@@ -4,7 +4,9 @@ RSpec.describe Cart, :type => :model do
   before(:each) do 
     @item = Item.first
     @cart = Cart.create
+    # binding.pry
     @line_item = @item.line_items.create(quantity: 1, cart: @cart)
+    # binding.pry
   end
 
   describe 'items' do 
