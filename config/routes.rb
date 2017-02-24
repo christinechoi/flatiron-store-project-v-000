@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users , skip: [:sessions]
-  as :user do
-    get '/users/sign_in', to: 'devise/sessions#new', as: :new_user_session
-    post '/users/sign_in', to: 'devise/sessions#create', as: :user_session
-    delete '/', to: 'devise/sessions#destroy', as: :destroy_user_session
-  end
+  devise_for :users
 
   root 'store#index', as: 'store'
 
