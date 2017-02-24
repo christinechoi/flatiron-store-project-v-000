@@ -16,4 +16,4 @@ end
 
 
 
-User.create(name: 'Kenlyn', email: 'kenlyn@gmail.com')
+  User.create(name: "Bill", email: "Bill@bill.com", password: "thisisapassword")
