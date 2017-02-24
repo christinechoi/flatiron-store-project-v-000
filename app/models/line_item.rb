@@ -4,11 +4,5 @@ class LineItem < ActiveRecord::Base
 
 
 
-  def create
-    # binding.pry
-    LineItem.new
-  end
-
-
 
 end
