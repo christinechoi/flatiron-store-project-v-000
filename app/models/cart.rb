@@ -2,17 +2,19 @@ class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
   has_many :line_items
   belongs_to :user
+<<<<<<< HEAD
 
 
   def total
 
+=======
+
+  def total
+>>>>>>> 370640225ac1dff0a61ae2dd49d73b0c84923434
     ary = self.items.map do |item|
       item.price
     end
-    ary.inject {|x| sum + x }
-
-    # binding.pry
-
+    ary.inject(0) {|sum, x| sum + x }
   end
 
 
