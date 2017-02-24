@@ -16,16 +16,16 @@ class Cart < ActiveRecord::Base
     @line_item = LineItem.new(item_id: new_item_id)
     @line_item.cart_id = self.id
 
-    # @line_item.quantity = 0
-    # @line_item.quantity = @line_item.quantity + 1
-
-    # #getting error for above two lines:
-    #    undefined method `quantity' for 0:Fixnum
-    #  # ./spec/models/cart_spec.rb:38:in `block (
-
-    # binding.pry
-    # @line_item
-
+    #item to be added to cart
+    @item = Item.find_by(id: new_item_id)
+    #if cart already has one
+    if self.items.include?(@item)
+      @line_item = self.line_items.find_by(item_id: new_item_id)
+      @line_item.quantity = @line_item.quantity + 1
+      @line_item
+    else
+      @line_item = LineItem.new(item_id: new_item_id, cart_id: self.id, quantity: 1)
+    end
   end
-
+  
 end
