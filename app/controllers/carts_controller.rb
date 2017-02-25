@@ -4,6 +4,12 @@ class CartsController < ApplicationController
     @items = Item.all
   end
 
+  def create
+    @cart = Cart.create
+    @cart.user_id = current_user.id 
+    redirect_to cart_path(@cart)
+  end
+
   def show
     current_cart = Cart.find_by(id: params[:id])
   end

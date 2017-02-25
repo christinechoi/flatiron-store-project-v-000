@@ -10,7 +10,6 @@
           <%= link_to "Sign up", new_user_registration_path %>
         <% end %>
 
-
         <% if !!@cart %>
           <li> <%= link_to "Cart", cart_path(@user.current_cart) %></li>
         <% end %>
