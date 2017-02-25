@@ -11,7 +11,6 @@ class Cart < ActiveRecord::Base
     ary.inject(0) {|sum, x| sum + x }
   end
 
-
   def add_item(new_item_id)
     @line_item = LineItem.new(item_id: new_item_id)
     @line_item.cart_id = self.id

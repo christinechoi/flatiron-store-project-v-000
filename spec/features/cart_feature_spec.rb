@@ -39,7 +39,9 @@ describe 'Feature Test: Cart', :type => :feature do
        first_item_inventory_before = @first_item.inventory
        second_item_inventory_before = @second_item.inventory
        visit cart_path(@user.current_cart)
+       #binding.pry
        click_button("Checkout")
+       #binding.pry
 
        @second_item.reload
        @first_item.reload
