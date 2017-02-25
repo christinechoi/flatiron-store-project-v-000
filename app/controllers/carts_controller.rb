@@ -5,11 +5,11 @@ class CartsController < ApplicationController
   end
 
   def show
-    # @item = Item.find
+    current_cart = Cart.find_by(id: params[:id])
   end
 
-  def update
-
+  def checkout
+    redirect_to cart_path
   end
 
   def destroy

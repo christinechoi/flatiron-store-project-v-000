@@ -4,9 +4,8 @@ class Item < ActiveRecord::Base
 
 
   def self.available_items
-    # binding.pry
     a = []
-    self.all.each do |item| 
+    self.all.each do |item|
       a << item if item.inventory > 0
     end
     a
