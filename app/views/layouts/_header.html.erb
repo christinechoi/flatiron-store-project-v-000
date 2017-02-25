@@ -12,7 +12,8 @@
 
 
         <% if !!@cart %>
-          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
+          <li> <%= link_to "Cart", cart_path(@user.current_cart) %></li>
         <% end %>
+
     </ul>
 </nav>

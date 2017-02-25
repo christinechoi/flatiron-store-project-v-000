@@ -16,7 +16,10 @@ class CartsController < ApplicationController
       @item.inventory = @item.inventory - line_item.quantity
       @item.save
     end
-    current_cart = nil
+    current_cart.status = "submitted"
+    # binding.pry
+    # current_cart = nil
+    # binding.pry
     redirect_to cart_path
   end
 
