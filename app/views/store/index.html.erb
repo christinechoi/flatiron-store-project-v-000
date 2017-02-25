@@ -11,12 +11,8 @@
 <% @items.each do |item| %>
   <%if item.inventory != 0 %>
   <p><%= item.title %> | <%= "$#{item.price.to_f/100}" %>
+    <%= button_to 'Add to Cart', line_items_path(item_id: item.id) %>
 
-    <% if current_user.current_cart %>
-       <%= button_to 'Add to Cart', line_items_path(item_id: item.id) %>
-    <% else %>
-       <%= button_to 'Add to Cart', '/carts', :method => :post %>
-    <% end %>
    </p>
   <% end %>
 <% end %>
