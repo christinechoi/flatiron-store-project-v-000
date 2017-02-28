@@ -4,7 +4,7 @@
   <p><%= notice %></p>
 <% end %>
 
-<% current_user.current_cart.line_items.each do |line_item| %>
+<% @cart.line_items.each do |line_item| %>
 
   <p><%= link_to line_item.item.title, item_path(line_item.item) %> |
     <%= number_to_currency(line_item.item.price) %>

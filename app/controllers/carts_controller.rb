@@ -11,10 +11,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    # binding.pry
-    current_cart = current_user.current_cart
-
-    # current_cart = Cart.find_by(id: params[:id])
+    @cart = Cart.find(params[:id])
   end
 
   def checkout
@@ -34,7 +31,7 @@ class CartsController < ApplicationController
     current_user.save
     redirect_to cart_path #carts#show
   end
-  
+
   def destroy
 
   end
