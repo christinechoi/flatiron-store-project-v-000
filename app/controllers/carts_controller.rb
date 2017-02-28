@@ -27,13 +27,14 @@ class CartsController < ApplicationController
       @item.save
     end
     @cart.status = "submitted"
-    current_user.save
+
     @cart = nil
-    current_user.current_cart = nil#somehow current_user.current_cart is not nil
+    current_user.current_cart_id = nil#somehow current_user.current_cart is not nil
     # binding.pry
+    current_user.save
     redirect_to cart_path #carts#show
   end
-
+  
   def destroy
 
   end

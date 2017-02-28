@@ -13,10 +13,12 @@
 
     <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
 
-    <% end %> 
+    <% end %>
   </p>
 <% end %>
 
 <p>Order total: <strong><%= number_to_currency(current_user.current_cart.total) %></strong> </p>
 
-<%= button_to 'Checkout', checkout_path %>
+<% if current_user.current_cart_id != nil %>
+  <%= button_to 'Checkout', checkout_path %>
+<% end %>

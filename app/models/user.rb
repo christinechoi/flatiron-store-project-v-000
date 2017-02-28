@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   belongs_to :current_cart, class_name: 'Cart'
 
 
-  def self.current_cart
-    self.current_cart ||= Cart.create
+  def self.create_cart
+    self.current_cart ||= Cart.create(params)
   end
 
 end
