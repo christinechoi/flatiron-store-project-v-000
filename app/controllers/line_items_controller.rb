@@ -8,6 +8,7 @@ class LineItemsController < ApplicationController
       if @cart.save
         @line_item = @cart.add_item(line_item_params)
         @line_item.cart_id = current_user.current_cart_id
+        current_user.save 
         redirect_to @cart
       else
         redirect_to store_path
