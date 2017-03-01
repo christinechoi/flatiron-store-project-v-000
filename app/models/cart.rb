@@ -7,13 +7,13 @@ class Cart < ActiveRecord::Base
   def total
     ary = self.items.map do |item|
       quantity = self.line_items.find(item.id).quantity
-      item.price * quantity 
+      item.price * quantity
     end
     a = ary.inject(0) {|sum, x| sum + x }
     a.round(2)
   end
 
-  def add_item(new_item_id) #{:item_id => "1"}
+  def add_item(new_item_id)
     @line_item = LineItem.new
     @line_item.item_id = new_item_id
     @line_item.cart_id = self.id
@@ -22,10 +22,9 @@ class Cart < ActiveRecord::Base
       @line_item = self.line_items.find_by(item_id: new_item_id)
       @line_item.quantity = @line_item.quantity + 1
       @line_item.save
-    #if cart does not have one  
+    #if cart does not have one
     else
       @line_item = LineItem.new(item_id: new_item_id, cart_id: self.id, quantity: 1)
-      @line_item.save
     end
     @line_item
   end
