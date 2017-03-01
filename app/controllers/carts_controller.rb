@@ -5,7 +5,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @cart = Cart.create
     @cart.user_id = current_user.id
     redirect_to cart_path(@cart)

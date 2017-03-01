@@ -6,9 +6,11 @@ class Cart < ActiveRecord::Base
 
   def total
     ary = self.items.map do |item|
-      item.price
+      quantity = self.line_items.find(item.id).quantity
+      item.price * quantity 
     end
-    ary.inject(0) {|sum, x| sum + x }
+    a = ary.inject(0) {|sum, x| sum + x }
+    a.round(2)
   end
 
   def add_item(new_item_id) #{:item_id => "1"}

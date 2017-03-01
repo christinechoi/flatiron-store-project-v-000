@@ -19,8 +19,8 @@
 
 <p>Order total:
   <strong>
-    <% if current_user != nil %>
-    <%= number_to_currency(current_user.current_cart.total) %>
+    <% if current_user %>
+    <%= "$#{current_user.current_cart.total/100}" %>
     <% else %>
     <%= number_to_currency(0) %>
     <% end %>
