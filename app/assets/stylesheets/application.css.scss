@@ -17,19 +17,34 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
-@import "bootstrap";
+/*@import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
+// body {
+//   padding-top: 70px;
+//   padding-bottom: 30px;
+// }
+//
+// .theme-dropdown .dropdown-menu {
+//   position: static;
+//   display: block;
+//   margin-bottom: 20px;
+// }
+//
+// .theme-showcase > p > .btn {
+//   margin: 5px 0;
+// }
