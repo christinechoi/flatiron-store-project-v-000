@@ -34,6 +34,69 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.background_image {
+  background-image:url("fashion.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.log-box {
+  padding: 40px;
+}
+
+.log-box .actions input {
+  border-radius: 8px;
+  background-color: #ed6009;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  width: 175px;
+  transition: all 0.5s;
+  margin: 5px;
+}
+
+.store {
+  width: 75%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: right;
+}
+
+.categories {
+  width: 25%;
+  font-size: 16px;
+  padding-top: 20px;
+  float: left;
+  height: 100vh;
+}
+
+.container {
+    width: 1140px;
+    margin: 20px auto 0 auto;
+}
+
+.store input {
+  border-radius: 8px;
+  background-color: orange;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  width: 150px;
+  transition: all 0.5s;
+  margin: 5px;
+}
+
+.nav {
+
+}
 // body {
 //   padding-top: 70px;
 //   padding-bottom: 30px;

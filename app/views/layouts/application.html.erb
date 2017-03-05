@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RailsFlatironStore</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= stylesheet_link_tag    'normalize', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <%= analytics_init if Rails.env.production? %>
+  <head>
+    <title>RailsFlatironStore</title>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+      <%= stylesheet_link_tag    'normalize', media: 'all' %>
+      <%= stylesheet_link_tag    'grid', media: 'all' %>
+      <%= javascript_include_tag 'application' %>
+      <%= csrf_meta_tags %>
+      <%= analytics_init if Rails.env.production? %>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-</head>
-<body>
+      <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+  </head>
+  <body>
 
-<%= render 'layouts/header' %>
-<%= yield %>
+      <header>
+          <div class="background">
+          </div>
 
-</body>
+            <%= render 'layouts/header' %>
+
+
+      </header>
+
+  <div class="container">
+      <div class="row">
+         <%= yield %>
+      </div>
+
+    </div>
+  </body>
 </html>
-
-<!-- 3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p> -->

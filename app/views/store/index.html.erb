@@ -1,18 +1,24 @@
 
-<!--Place in sidebar-->
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category) %>
-<% end %>
+<div class="categories">
+  <!--Place in sidebar-->
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.title, category_path(category) %></li>
+      <% end %>
+  </ul>
 
-<br></br>
+</div>
 
+<div class="store">
 
 <!--list-->
 <% @items.each do |item| %>
   <%if item.inventory != 0 %>
-  <p><%= item.title %> | <%= "$#{item.price.to_f/100}" %>
+  <p><%= item.title %> | <%= "$#{item.price.to_f/100}" %></p>
     <%= button_to 'Add to Cart', line_items_path(item_id: item.id), :method => :post %>
+    <br>
 
-   </p>
   <% end %>
 <% end %>
+
+</div>
