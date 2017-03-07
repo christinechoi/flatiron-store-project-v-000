@@ -92,6 +92,20 @@ html {
   float: right;
 }
 
+.store input {
+  border-radius: 8px;
+  background-color: #ed6009;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 4px;
+  width: 125px;
+  transition: all 0.5s;
+  margin: 8px;
+  font-size: 85%;
+  margin-left: 25px;
+}
+
 .categories {
   width: 25%;
   font-size: 16px;
@@ -129,19 +143,7 @@ html {
 
 .container a {
     text-decoration: none;
-    color: #555;
-}
-
-.store input {
-  border-radius: 8px;
-  background-color: orange;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 5px;
-  width: 150px;
-  transition: all 0.5s;
-  margin: 5px;
+    color: white;
 }
 
 .logo {
