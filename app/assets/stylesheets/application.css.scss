@@ -40,13 +40,15 @@ html {
 }
 
 .background_image {
-  background-image:url("fashion.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("fashion.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 .log-box {
   padding: 40px;
+  color: white;
 }
 
 .log-box .actions input {
@@ -97,6 +99,9 @@ html {
 .nav {
 
 }
+
+
+
 // body {
 //   padding-top: 70px;
 //   padding-bottom: 30px;
