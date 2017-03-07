@@ -124,6 +124,45 @@ html {
   color: #555;
 }
 
+.category-box {
+  padding: 40px;
+  color: #555;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.category-box li {
+  color: #555;
+  text-transform: uppercase;
+  list-style: none;
+  font-weight: 100;
+}
+
+.category-box li a {
+  color: #555;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.category-box input {
+  border-radius: 8px;
+  background-color: #ed6009;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  width: 175px;
+  transition: all 0.5s;
+  margin: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 85%;
+  margin-left: 25px;
+}
+
 .container {
     width: 1140px;
     margin: 20px auto 0 auto;
