@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :test, :development do
+  gem 'rails_layout'
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"

@@ -1,16 +1,17 @@
+<div class="row">
+    <ul class="main-nav">
+      <li> <%= link_to "Store Home", store_path %> </li>
 
-<nav class="">
- <%= link_to "Store Home", store_path %> </li>
+       <% if current_user %>
+      <li> Signed in as <%= current_user.email %> </li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+       <% else %>
+      <li> <%= link_to "sign in", new_user_session_path %> </li>
+      <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+       <% end %>
 
-  <% if current_user %>
-    Signed in as <%= current_user.email %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "sign in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-  <% end %>
-
-  <% if current_user && current_user.current_cart %>
-    <%= link_to "Cart", cart_path(current_user.current_cart) %>
-  <% end %>
-</nav>
+       <% if current_user && current_user.current_cart %>
+      <li>   <%= link_to "Cart", cart_path(current_user.current_cart) %> </li>
+       <% end %>
+    </ul>
+</div>

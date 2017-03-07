@@ -1,16 +1,15 @@
 class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   belongs_to :user
 
 
   def total
-    ary = self.items.map do |item|
-      quantity = self.line_items.find(item.id).quantity
-      item.price * quantity
+    total = 0
+    self.line_items.each do |line_item|
+      total += line_item.item.price * line_item.quantity
     end
-    a = ary.inject(0) {|sum, x| sum + x }
-    a.round(2)
+    return total
   end
 
   def add_item(new_item_id)

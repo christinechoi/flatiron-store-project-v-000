@@ -1,31 +1,39 @@
-<h1>Your Cart</h1>
 
-<% if notice %>
-  <p><%= notice %></p>
-<% end %>
+<div class="log-box">
+  <div class="cart">
+    <h1>Your Cart</h1>
 
-<% @cart.line_items.each do |line_item| %>
+    <!-- <% if notice %>
+      <p><%= notice %></p>
+    <% end %> -->
 
-  <p><%= link_to line_item.item.title, item_path(line_item.item) %> |
-    <%= number_to_currency(line_item.item.price) %>
-    | Quantity: <%= line_item.quantity %> |
-    <% if line_item.item.inventory < 5 %>
+    <% @cart.line_items.each do |line_item| %>
 
-    <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
+      <p><%= link_to line_item.item.title, item_path(line_item.item) %> |
+        <%= "#{line_item.item.price.to_f/100}" %>
+        | Quantity: <%= line_item.quantity %> |
+        <% if line_item.item.inventory < 5 %>
 
+        <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
+
+        <% end %>
+      </p>
     <% end %>
-  </p>
-<% end %>
 
-<p>Order total:
-  <strong>
-    <% if current_user %>
-    <%= "$#{current_user.current_cart.total/100}" %>
-    <% else %>
-    <%= number_to_currency(0) %>
+    <p>Order total:
+      <strong>
+        <% if current_user %>
+        <%= "$#{current_user.current_cart.total/100}" %>
+        <% else %>
+        <%= number_to_currency(0) %>
+        <% end %>
+      </strong> </p>
+      <br>
+
+    <div class="actions">
+    <% if current_user != nil %>
+      <%= button_to 'Checkout', checkout_path %>
     <% end %>
-  </strong> </p>
-
-<% if current_user != nil %>
-  <%= button_to 'Checkout', checkout_path %>
-<% end %>
+  </div>
+  </div>
+</div>

@@ -1,7 +1,6 @@
 class LineItemsController < ApplicationController
 
   def create
-
     @cart = current_user.create_cart
     @cart.user_id = current_user.id
 
@@ -12,7 +11,6 @@ class LineItemsController < ApplicationController
         @line_item.save
         redirect_to @cart
       else
-        @line_item.save
         redirect_to store_path
       end
   end
