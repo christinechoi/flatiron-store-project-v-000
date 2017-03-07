@@ -16,12 +16,7 @@ class CartsController < ApplicationController
 
   def checkout
     @cart = current_user.current_cart
-    @cart.line_items.collect do |line_item|
-      @item = Item.find_by(id: line_item.item_id)
-      @item.inventory = @item.inventory - line_item.quantity
-      @item.save
-    end
-    @cart.status = "submitted"
+    @cart.checkout
     @cart = nil
     current_user.current_cart_id = nil
     current_user.save

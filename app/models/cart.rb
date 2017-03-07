@@ -1,5 +1,5 @@
 class Cart < ActiveRecord::Base
-  
+
   has_many :items, through: :line_items
   has_many :line_items, dependent: :destroy
   belongs_to :user
@@ -25,6 +25,15 @@ class Cart < ActiveRecord::Base
       @line_item = LineItem.new(item_id: new_item_id, cart_id: self.id, quantity: 1)
     end
     @line_item
+  end
+
+  def checkout
+    self.line_items.collect do |line_item|
+      @item = Item.find_by(id: line_item.item_id)
+      @item.inventory = @item.inventory - line_item.quantity
+      @item.save
+    end
+    self.status = "submitted"
   end
 
 end
