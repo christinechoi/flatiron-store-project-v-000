@@ -39,8 +39,13 @@ html {
     margin: 0 auto;
 }
 
+.field {
+  padding-bottom: 10px;
+  font-size: 85%;
+}
+
 .background_image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("fashion.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("fashion.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -48,6 +53,13 @@ html {
 
 .log-box {
   padding: 40px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.log-box a {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
@@ -67,6 +79,7 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 100;
+  font-size: 85%;
 }
 
 .store {
@@ -87,9 +100,35 @@ html {
   height: 100vh;
 }
 
+.categories li {
+  list-style: none;
+  padding-left: 10%;
+}
+
+.categories li a {
+  text-decoration: none;
+  color: #555;
+}
+
 .container {
     width: 1140px;
     margin: 20px auto 0 auto;
+}
+
+.container h1 {
+    padding-left: 25px;
+}
+
+.container li {
+    padding-left: 25px;
+}
+
+.container p {
+    padding-left: 25px;
+}
+
+.container a {
+    text-decoration: none;
 }
 
 .store input {
@@ -104,9 +143,17 @@ html {
   margin: 5px;
 }
 
+.logo {
+  margin-top: 10px;
+  margin-left: 40px;
+  height: 100px;
+  width: 90px;
+}
 .main-nav {
   float: right;
   list-style: none;
+  padding-right: 25px;
+  padding-top: 40px;
 }
 
 .main-nav li {
@@ -122,10 +169,17 @@ html {
 }
 
 .cart {
+  padding-top: 15px;
+  padding-left: 15px;
   background: grey;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+}
+
+.cart a {
+  text-decoration: none;
+  color: white;
 }
 // body {
 //   padding-top: 70px;

@@ -19,13 +19,12 @@
         <% end %>
       </p>
     <% end %>
-
-    <p>Order total:
-      <strong>
+    <br>
+    <p><strong>Order total:
         <% if current_user %>
-        <%= "$#{current_user.current_cart.total/100}" %>
+        <%= "$#{current_user.current_cart.total.to_f/100}" %>
         <% else %>
-        <%= number_to_currency(0) %>
+        <%= number_to_currency.to_f(0) %>
         <% end %>
       </strong> </p>
       <br>
