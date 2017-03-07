@@ -5,7 +5,6 @@ class CartsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @cart = Cart.create
     @cart.user_id = current_user.id
     redirect_to cart_path(@cart)
@@ -16,21 +15,17 @@ class CartsController < ApplicationController
   end
 
   def checkout
-
-    @cart = current_user.current_cart#Cart.find_by(id: params[:id])
-
+    @cart = current_user.current_cart
     @cart.line_items.collect do |line_item|
       @item = Item.find_by(id: line_item.item_id)
       @item.inventory = @item.inventory - line_item.quantity
       @item.save
     end
     @cart.status = "submitted"
-
     @cart = nil
-    current_user.current_cart_id = nil#somehow current_user.current_cart is not nil
-    # binding.pry
+    current_user.current_cart_id = nil
     current_user.save
-    redirect_to cart_path #carts#show
+    redirect_to cart_path
   end
 
   def destroy

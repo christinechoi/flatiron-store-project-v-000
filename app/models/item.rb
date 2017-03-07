@@ -1,14 +1,15 @@
 class Item < ActiveRecord::Base
+
   belongs_to :category
   has_many :line_items
 
 
   def self.available_items
-    a = []
+    ary = []
     self.all.each do |item|
-      a << item if item.inventory > 0
+      ary << item if item.inventory > 0
     end
-    a
+   ary
   end
 
 end
